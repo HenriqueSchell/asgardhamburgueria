@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
     <link rel="stylesheet" href="./src/output.css">
+    <!--TOASTIFY-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--FONTE-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +28,8 @@
 
             <span class="text-white font-medium">Av. Rudá 551, Capão da canoa, RS</span>
 
-            <div class="bg-green-500 px-4 py-1 rounded-lg mt-6">
-                <span id="date-span" class="text-white font-medium">Segunda a domingo - 18:00 as 22:00</span>
+            <div class="bg-green-500 px-4 py-1 rounded-lg mt-6" id="date-span">
+                <span class="text-white font-medium">Segunda a domingo - 18:00 as 22:00</span>
                 
             </div>
 
@@ -52,7 +54,7 @@
                     
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="text-lg font-bold">R$ 18.90</p>
-                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-nome="Hamburguer Smash" data-price="18.90">
+                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-name="Hamburguer Smash" data-price="18.90">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -72,7 +74,7 @@
                     
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="text-lg font-bold">R$ 32.90</p>
-                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-nome="Hamburguer Duplo" data-price="32.90">
+                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-name="Hamburguer Duplo" data-price="32.90">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -92,7 +94,7 @@
                     
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="text-lg font-bold">R$ 39.90</p>
-                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-nome="Hamburguer Duplo Cheddar" data-price="39.90">
+                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-name="Hamburguer Duplo Cheddar" data-price="39.90">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -112,7 +114,7 @@
                     
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="text-lg font-bold">R$ 40.90</p>
-                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-nome="Hamburguer de Frango da casa" data-price="40.90">
+                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-name="Hamburguer de Frango da casa" data-price="40.90">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -124,8 +126,8 @@
 
         </main>
 
-        <div class="mx-auto max-w-7xl px-2 my-2">
-            <h2 class="font-bold text-3xl">Bebidas</h2>
+        <div class="mb-10 mx-auto max-w-7xl px-2 my-2">
+            <h2 class="font-bold text-3xl mb-5">Bebidas</h2>
         </div>
 
         <!--Início grid bebidas-->
@@ -140,7 +142,7 @@
                     
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="text-lg font-bold">R$ 9.00</p>
-                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-nome="Coca Cola 350ml" data-price="9.00">
+                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-name="Coca Cola 350ml" data-price="9.00">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -157,7 +159,7 @@
                     
                     <div class="flex items-center gap-2 justify-between mt-3">
                         <p class="text-lg font-bold">R$ 9.00</p>
-                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-nome="Guarana Antartica 350ml" data-price="9.00">
+                        <button class="bg-gray-900 px-4 py-1 rounded add-to-cart-btn hover:scale-110 duration-500" data-name="Guarana Antartica 350ml" data-price="9.00">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -181,7 +183,7 @@
             <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
 
             <p class="font-bold mt-4">Endereço de entrega:</p>
-            <input type="text" name="addres" id="address" placeholder="Digite seu endereço completo..." class="w-full border-2 p-1 rounded my-1">
+            <input type="text" name="address" id="address" placeholder="Digite seu endereço completo..." class="w-full border p-2 rounded my-1">
             <p class="text-red-600 hidden" id="address-warn">Digite seu endereço completo!</p>
 
             <div class="flex justify-between">
@@ -204,6 +206,7 @@
     </footer>
     <!--Fim Button cart footer-->
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="script.js"></script>
 
 </body>
